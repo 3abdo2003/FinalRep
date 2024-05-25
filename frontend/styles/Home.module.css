@@ -1,0 +1,77 @@
+/* Home.module.css */
+.main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  /* Style for the product list cards */
+  .productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .productCard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    transition: transform 0.2s;
+  }
+  
+  .productCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .productImage {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .productName {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #555;
+  }
+  
+  .productPrice {
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  .productDiscount {
+    font-size: 1rem;
+    color: #e63946;
+  }
+  
+  .productOriginalPrice {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-decoration: line-through;
+  }
+  
+  .productButton {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.2s;
+    text-decoration: none;
+  }
+  
+  .productButton:hover {
+    background-color: #005bb5;
+  }
+  

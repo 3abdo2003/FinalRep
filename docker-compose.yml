@@ -1,0 +1,114 @@
+services:
+  authentication:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      MONGODB_URI: 'mongodb+srv://mohamed:mohamed@cluster0.7jkva8p.mongodb.net/authentication-db?retryWrites=true&w=majority&appName=Cluster0'
+    ports:
+      - 3001:3000
+    depends_on:
+      - kafka
+      - mongodb
+
+
+  cart:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      MONGODB_URI: 'mongodb+srv://mohamed:mohamed@cluster0.7jkva8p.mongodb.net/cart-db?retryWrites=true&w=majority&appName=Cluster0'
+    ports:
+      - 3002:3000
+    depends_on:
+      - kafka
+      - mongodb
+
+
+  home:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      MONGODB_URI: 'mongodb+srv://mohamed:mohamed@cluster0.7jkva8p.mongodb.net/home-db?retryWrites=true&w=majority&appName=Cluster0'
+    ports:
+      - 3003:3000
+    depends_on:
+      - kafka
+      - mongodb
+
+
+  product:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      MONGODB_URI: 'mongodb+srv://mohamed:mohamed@cluster0.7jkva8p.mongodb.net/product-db?retryWrites=true&w=majority&appName=Cluster0'
+    ports:
+      - 3004:3000
+    depends_on:
+      - kafka
+      - mongodb
+
+
+
+  profile:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+      KAFKA_HOST: kafka
+      KAFKA_PORT: 9092
+      MONGODB_URI: 'mongodb+srv://mohamed:mohamed@cluster0.7jkva8p.mongodb.net/profile-db?retryWrites=true&w=majority&appName=Cluster0'
+    ports:
+      - 3005:3000
+    depends_on:
+      - kafka
+      - mongodb
+
+
+
+  kafka:
+    image: docker.io/bitnami/kafka:3.7
+    ports:
+      - "9092:9092"
+    volumes:
+      - "kafka_data:/bitnami"
+    environment:
+      # KRaft settings
+      - KAFKA_CFG_NODE_ID=0
+      - KAFKA_CFG_PROCESS_ROLES=controller,broker
+      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka:9093
+      # Listeners
+      - KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      - KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
+
+  mongodb:
+    image: docker.io/bitnami/mongodb:7.0
+    ports:
+      - "27018:27017"
+    volumes:
+      - 'mongodb_data:/bitnami/mongodb'
+
+
+volumes:
+  kafka_data:
+    driver: local
+  mongodb_data:
+    driver: local

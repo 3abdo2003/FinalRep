@@ -1,0 +1,163 @@
+/* Product.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.productInfo {
+  text-align: center;
+  width: 80%;
+  margin-bottom: 2em;
+}
+
+.productImage {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.productDescription {
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.productPrice {
+  font-size: 1.5em;
+  color: #ff6600;
+  margin: 10px 0;
+}
+
+.productDiscount {
+  color: #ff0000;
+  font-size: 1.2em;
+  text-decoration: line-through;
+}
+
+.specifications {
+  margin: 20px 0;
+  background-color: #f8f8f8;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.specifications ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.specifications li {
+  margin: 5px 0;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.addToCart {
+  margin-bottom: 2em;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.cartAndReviewsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.reviews {
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.review {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.addReview {
+  margin-top: 20px;
+}
+
+.ratingInput,
+.commentInput {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.submitButton,
+.addToCartButton {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submitButton:hover,
+.addToCartButton:hover {
+  background-color: #005bb5;
+}
+
+.cartMessage {
+  margin-top: 10px;
+  color: green;
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.closeButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.closeButton:hover {
+  background-color: #d32f2f;
+}
+
+.successMessage {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+

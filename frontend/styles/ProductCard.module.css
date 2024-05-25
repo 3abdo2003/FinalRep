@@ -1,0 +1,27 @@
+/* ProductCard.module.css */
+.productCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center; /* Center-align content */
+    width: 200px; /* Fixed width for product card */
+    margin-bottom: 20px; /* Add some margin between product cards */
+  }
+  
+  .productImage {
+    width: 100%;
+    height: auto;
+  }
+  
+  .productName {
+    margin-top: 0;
+  }
+  
+  .price {
+    margin: 5px 0;
+  }
+  
+  .discount {
+    color: #f00; /* Red color for discount */
+  }
+  
